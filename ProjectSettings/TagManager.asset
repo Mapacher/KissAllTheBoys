@@ -8,6 +8,8 @@ TagManager:
   - Terrain
   - botonSalto
   - Melocoton
+  - Trampa
+  - Vacio
   layers:
   - Default
   - TransparentFX

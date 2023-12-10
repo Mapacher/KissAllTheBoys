@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         movimiento();
        
         //SOLO PARA TECLADO EN PC
-        //movimientoPC();
+        movimientoPC();
     }
 
     //----------------------------------------

@@ -22,6 +22,7 @@ public class ItemCollector : MonoBehaviour
             Destroy(collision.gameObject);
             puntos+=50;
             puntosText.text = "Puntos: " + puntos;
+ 
         }
     }
 }
