@@ -49,9 +49,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         movimiento();
-       
+
         //SOLO PARA TECLADO EN PC
         movimientoPC();
+
     }
 
     //----------------------------------------

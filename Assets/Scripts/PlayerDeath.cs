@@ -70,7 +70,7 @@ public class PlayerDeath : MonoBehaviour
         }
         else
         {
-            player.bodyType = RigidbodyType2D.Dynamic;
+            player.bodyType = RigidbodyType2D.Dynamic;//al morir lo ponemos estatico, por lo que aquí debemos volver a ponerlo dinamico
             player.transform.position = respawnPoint.position;
             anim.SetTrigger("Respawn");
         }
