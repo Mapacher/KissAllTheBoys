@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6637836169052357104}
   - component: {fileID: 1888421633247931037}
   m_Layer: 0
-  m_Name: Vacio
+  m_Name: CaidaAlVacio
   m_TagString: Vacio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
