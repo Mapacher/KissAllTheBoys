@@ -14,6 +14,8 @@ public class PlayerDeath : MonoBehaviour
 
     public static int vidas;
 
+    [SerializeField] private AudioSource deathSoundEffect;
+
     private void Start()
     {
         player=GetComponent<Rigidbody2D>();
@@ -53,6 +55,7 @@ public class PlayerDeath : MonoBehaviour
 
     private void Die()
     {
+        deathSoundEffect.Play();
         player.bodyType = RigidbodyType2D.Static;//convierte a estatico para que no se pueda mover mientras está muriendo
         vidas--;
         guardarVidas();

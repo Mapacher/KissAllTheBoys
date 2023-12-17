@@ -12,11 +12,13 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;//para coger las animaciones y manejar sus condiciones
 
-    [SerializeField] private LayerMask jumpableGround; //para la capa de suelo
+    private LayerMask jumpableGround; //para la capa de suelo
 
     private bool isJump, isLeft, isRight;
 
     [SerializeField] private float speedForce, speedForceAir, jumpForce;
+
+    [SerializeField] private AudioSource jumpSoundEffect;
 
     //Para controlar las animaciones y el cambio entre ellas
     private enum MovementState { idle, walking, jumping }
@@ -51,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         movimiento();
 
         //SOLO PARA TECLADO EN PC
-        movimientoPC();
+        //movimientoPC();
 
     }
 
@@ -61,10 +63,6 @@ public class PlayerMovement : MonoBehaviour
     public void pushJump()
     {
         isJump = true;
-    }
-    public void releaseJump()
-    {
-        isJump = false;
     }
     public void pushLeft()
     {
@@ -136,7 +134,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isJump && isGrounded())
         {
+            jumpSoundEffect.Play();
             player.velocity = new Vector2(player.velocity.x, jumpForce);
+            isJump = false;
 
         }
 
@@ -198,6 +198,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
+            jumpSoundEffect.Play();
             player.velocity = new Vector2(player.velocity.x, jumpForce);
         }
 

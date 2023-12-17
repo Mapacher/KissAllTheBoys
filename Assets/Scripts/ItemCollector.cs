@@ -10,6 +10,8 @@ public class ItemCollector : MonoBehaviour
 
     private TextMeshProUGUI puntosText;
 
+    [SerializeField] private AudioSource collectionSoundEffect;
+
     private void Start()
     {
         puntosText = GameObject.Find("Puntos_text").GetComponent<TextMeshProUGUI>();
@@ -18,7 +20,8 @@ public class ItemCollector : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Melocoton"))
-        { 
+        {
+            collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             puntos+=50;
             puntosText.text = "Puntos: " + puntos;
