@@ -69,6 +69,8 @@ public class PlayerDeath : MonoBehaviour
         {
             vidas = 3;
             guardarVidas();
+            PlayerPrefs.SetInt("Puntos", 0);//ESTO LO HACE AHORA PARA QUE PASE A 0, CUANDO TENGA UNA VENTANA DE GAMEOVER, TENDRÁ QUE CAMBIAR. 
+            //PROBABLEMENTE ESTO MISMO TENGA QUE PONERLO EN ESA VENTANA DE GAME OVER
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else

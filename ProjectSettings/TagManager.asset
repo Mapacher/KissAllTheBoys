@@ -10,6 +10,7 @@ TagManager:
   - Melocoton
   - Trampa
   - Vacio
+  - boy
   layers:
   - Default
   - TransparentFX
