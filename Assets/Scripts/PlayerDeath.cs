@@ -22,13 +22,13 @@ public class PlayerDeath : MonoBehaviour
         anim=GetComponent<Animator>();
         respawnPoint = GameObject.FindWithTag("Respawn").transform;
 
-        if (PlayerPrefs.HasKey("Vidas"))
-        {
+        /*if (PlayerPrefs.HasKey("Vidas"))
+        {*/
             leerVidas();
-        }
+        /*}
         else {
             vidas = 3;        
-        }
+        }*/
 
         vidasText = GameObject.Find("Vida_text").GetComponent<TextMeshProUGUI>();
         vidasText.text = "Vidas: " + vidas;
@@ -67,11 +67,12 @@ public class PlayerDeath : MonoBehaviour
     private void RestartLever() {//A este metodo se le llama desde la animación de muerte
         if (vidas < 1)//Si tiene 0 vidas se recarga la escena. ESTO HABRÁ QUE CAMBIARLO A VENTANA DE GAME OVER Y PEDIR DATOS
         {
-            vidas = 3;
+            /*vidas = 3;
             guardarVidas();
-            PlayerPrefs.SetInt("Puntos", 0);//ESTO LO HACE AHORA PARA QUE PASE A 0, CUANDO TENGA UNA VENTANA DE GAMEOVER, TENDRÁ QUE CAMBIAR. 
+            PlayerPrefs.SetInt("Puntos", 0);*/ //ESTO LO HACE AHORA PARA QUE PASE A 0, CUANDO TENGA UNA VENTANA DE GAMEOVER, TENDRÁ QUE CAMBIAR. 
             //PROBABLEMENTE ESTO MISMO TENGA QUE PONERLO EN ESA VENTANA DE GAME OVER
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(3);
         }
         else
         {

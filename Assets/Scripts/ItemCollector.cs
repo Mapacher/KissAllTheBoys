@@ -18,14 +18,14 @@ public class ItemCollector : MonoBehaviour
     private void Start()
     {
 
-        if (PlayerPrefs.HasKey("Puntos"))
-        {
+        /*if (PlayerPrefs.HasKey("Puntos"))
+        {*/
             leerPuntos();
-        }
+        /*}
         else
         {
             puntos = 0;
-        }
+        }*/
 
         player = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();

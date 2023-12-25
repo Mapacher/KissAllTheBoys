@@ -20,7 +20,6 @@ public class finish : MonoBehaviour
     {
         if (collision.gameObject.name == "meta") {
             finishSound.Play();
-            //Invoke("completeLever", 2f);
             player.bodyType = RigidbodyType2D.Static;
             anim.SetTrigger("Kiss");
         }
